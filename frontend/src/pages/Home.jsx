@@ -4,11 +4,11 @@ import MessageContainer from '../components/messages/MessageContainer'
 
 const Home = () => {
     return (
-        <div className='flex h-[95%] w-full rounded-lg mx-3'>
+        <div className='flex h-screen w-full rounded-lg'>
             <div className='overflow-y-auto w-[25%]'>
                 <Sidebar />
             </div>
-            <div className='w-[75%]'>
+            <div className='overflow-y-auto w-[75%]'>
                 <MessageContainer />
             </div>
             {/* <h1>gg</h1> */}
