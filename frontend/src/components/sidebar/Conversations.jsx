@@ -3,7 +3,7 @@ import Conversation from './Conversation'
 
 const Conversations = () => {
   return (
-    <div className='flex flex-col mt-20'>
+    <div className='flex flex-col'>
       <Conversation/>
       <Conversation/>
       <Conversation/>

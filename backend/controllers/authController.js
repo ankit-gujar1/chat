@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import User from "../models/userModel.js";
 import generateTokenAndSetCookie from "../utils/generateToken.js";
+import validator from "validator";
 
 export const signup = async (req, res) => {
     try {
@@ -9,6 +10,8 @@ export const signup = async (req, res) => {
         if (usernameCheck) {
             return res.status(400).json({ msg: "Username already taken" });
         }
+
+        if(!validator.isStrongPassword(password)) return res.status(400).json({ msg: "Password must contain..."});
 
         if (password !== confirmPassword) {
             return res.status(400).json({ msg: "Passwords don't match" });

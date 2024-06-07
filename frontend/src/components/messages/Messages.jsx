@@ -3,7 +3,7 @@ import Message from './Message'
 
 const Messages = () => {
   return (
-    <div className='flex-1 px-4 mt-20'>
+    <div className='flex-1 px-4'>
       <Message/>
       <Message/>
       <Message/>
