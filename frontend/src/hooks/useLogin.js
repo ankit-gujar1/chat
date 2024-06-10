@@ -19,9 +19,10 @@ const useLogin = () => {
         if (!success) return;
 
         setLoading(true);
-        axios.post(url + 'login', { username, password })
+        axios.post(url + 'login', { username, password },{ withCredentials: true })
         .then((r) => {
             toast.success("Login successful");
+            console.log(r.data.cookies)
             localStorage.setItem("user", JSON.stringify(r.data));
             setUser(r.data);
             console.log(r.data);

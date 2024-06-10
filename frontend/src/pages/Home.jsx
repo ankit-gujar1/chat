@@ -22,7 +22,7 @@ const Home = () => {
             <div className='overflow-y-auto w-[25%]'>
                 <Sidebar />
             </div>
-            <div className='overflow-y-auto w-[75%]'>
+            <div className='overflow-y-auto w-[75%] shadow-2xl'>
                 <MessageContainer />
             </div>
             {/* <h1>gg</h1> */}

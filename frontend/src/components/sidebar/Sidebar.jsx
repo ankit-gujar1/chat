@@ -5,7 +5,7 @@ import Conversations from './Conversations'
 
 const Sidebar = () => {
   return (
-    <div className='flex flex-col ms-3'>
+    <div className='flex flex-col ms-1'>
       <SearchInput />
       {/* <div className="divider px-2"></div> */}
       <Conversations />

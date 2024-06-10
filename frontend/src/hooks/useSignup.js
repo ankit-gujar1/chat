@@ -19,7 +19,7 @@ const useSignup = () => {
         if (!success) return;
 
         setLoading(true);
-        axios.post(url + 'signup', { fullName, username, password, confirmPassword, gender })
+        axios.post(url + 'signup', { fullName, username, password, confirmPassword, gender },{ withCredentials: true })
         .then((r) => {
             localStorage.setItem("user", JSON.stringify(r.data));
             setUser(r.data);

@@ -6,7 +6,11 @@ import validator from "validator";
 export const signup = async (req, res) => {
     try {
         const { fullName, username, password, confirmPassword, gender } = req.body;
-        const usernameCheck = await User.findOne({ username });
+
+        const uName=username.toLowerCase();
+        // username=uName;
+
+        const usernameCheck = await User.findOne({ username:uName });
         if (usernameCheck) {
             return res.status(400).json({ msg: "Username already taken" });
         }
@@ -20,12 +24,12 @@ export const signup = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(password, salt);
 
-        const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-        const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+        const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${uName}`;
+        const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${uName}`;
 
         const newUser = new User({
             fullName,
-            username,
+            username:uName,
             password: hashPassword,
             gender,
             profilePic: gender === "male" ? boyProfilePic : girlProfilePic
@@ -39,7 +43,7 @@ export const signup = async (req, res) => {
             res.status(201).json({
                 _id: newUser._id,
                 fullName: newUser.fullName,
-                username: newUser.username,
+                username: newUser.uName,
                 profilePic: newUser.profilePic,
             });
         } else {
@@ -55,7 +59,11 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const { username, password } = req.body;
-        const user = await User.findOne({ username });
+
+        const uName=username.toLowerCase();
+        // username=uName;
+        
+        const user = await User.findOne({ username:uName });
         if (!user) {
             return res.status(400).json({ msg: "User does not exist" });
         }

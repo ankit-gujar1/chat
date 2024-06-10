@@ -12,10 +12,16 @@ import cors from 'cors';
 dotenv.config();
 const app=express();
 
+const corsOptions = {
+    origin: 'http://localhost:8081', // Replace with your frontend URL
+    credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
+    
+  };
+
+app.use(cors(corsOptions));
 app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
 app.use(cookieParser());
 
-app.use(cors());
 
 app.use("/api/auth",authRoutes);
 app.use("/api/message",messageRoutes);
