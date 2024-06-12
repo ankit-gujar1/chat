@@ -14,7 +14,7 @@ const useGetMessages = () => {
 
         axios.get(url+selectedConversation._id,{withCredentials:true})
         .then((r)=>{
-            console.log(r.data);
+            // console.log(r.data);
             setMessages(r.data);
         })
         .catch((e)=>{

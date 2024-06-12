@@ -8,9 +8,10 @@ import authRoutes from './routes/authRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import cors from 'cors';
+import { app, server } from './socket/socket.js';
 
 dotenv.config();
-const app=express();
+
 
 const corsOptions = {
     origin: 'http://localhost:8081', // Replace with your frontend URL
@@ -31,7 +32,7 @@ app.use("/api/users",userRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
-    app.listen(process.env.PORT,()=>{
+    server.listen(process.env.PORT,()=>{
         console.log("backend is up and running");
     });
 })

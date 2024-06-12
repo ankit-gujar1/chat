@@ -9,23 +9,21 @@ const Message = ({ message }) => {
   const { selectedConversation } = useConversation();
 
   const fromMe = message.senderId === user._id;
-
   const chatClass = fromMe ? "chat-end" : "chat-start";
-
+  const shakeClass = message.shouldShake ? "shake" : "";
   const profilePic = fromMe ? user.profilePic : selectedConversation?.profilePic;
-
   const formattedTime = extractTime(message.createdAt);
 
   return (
     <>
 
-      <div className={`chat ${chatClass}`}>
+      <div className={`chat ${chatClass} mt-2`}>
         <div className="chat-image avatar">
           <div className="w-12 rounded-full">
             <img className='' src={profilePic} />
           </div>
         </div>
-        <div className="chat-bubble">{message.message}</div>
+        <div className={`chat-bubble ${shakeClass}`}>{message.message}</div>
         <div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>{formattedTime}</div>
       </div>
     </>
