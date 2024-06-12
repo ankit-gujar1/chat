@@ -3,7 +3,7 @@ import useConversation from '../zustand/useConversation'
 import axios from 'axios';
 
 const useGetMessages = () => {
-    const url="http://localhost:8080/api/message/";
+    const url="https://chat-fwrs.onrender.com/api/message/";
 
     const {selectedConversation,messages,setMessages}=useConversation();
 

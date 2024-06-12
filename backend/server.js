@@ -14,7 +14,7 @@ dotenv.config();
 
 
 const corsOptions = {
-    origin: 'http://localhost:8081', // Replace with your frontend URL
+    origin: 'https://my-chat-stuff.netlify.app', // Replace with your frontend URL
     credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
     
   };

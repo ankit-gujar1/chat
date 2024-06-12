@@ -4,7 +4,7 @@ import { useAuthContext } from '../context/AuthContext';
 
 const useLogout = () => {
 
-    const url = "http://localhost:8080/api/auth/";
+    const url = "https://chat-fwrs.onrender.com/api/auth/";
 
     const {setUser}=useAuthContext();
 

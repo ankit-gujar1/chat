@@ -17,7 +17,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (user) {
-            const socket = io("http://localhost:8080", {
+            const socket = io("https://chat-fwrs.onrender.com", {
                 query: { //sending user id to backend using socket, ref to socket.js in backend
                     userId: user._id,
                 }

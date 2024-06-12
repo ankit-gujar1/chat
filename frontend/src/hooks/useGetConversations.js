@@ -6,7 +6,7 @@ import axios from "axios";
 const useGetConversations = () => {
 	const [loading, setLoading] = useState(false);
 	const [conversations, setConversations] = useState([]);
-	const url = "http://localhost:8080/api/users/";
+	const url = "https://chat-fwrs.onrender.com/api/users/";
 
 	useEffect(() => {
 			setLoading(true);

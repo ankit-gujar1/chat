@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const useLogin = () => {
-    const url = "http://localhost:8080/api/auth/";
+    const url = "https://chat-fwrs.onrender.com/api/auth/";
 
     const [loading, setLoading] = useState(false);
 
