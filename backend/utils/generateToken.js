@@ -14,7 +14,6 @@ const generateTokenAndSetCookie = (userId, res) => {
 		httpOnly: true, // prevent XSS attacks cross-site scripting attacks
 		sameSite: "None", // CSRF attacks cross-site request forgery attacks
 		secure: true,
-        domain: 'https://my-chat-stuff.netlify.app'
 	});
 };
 
